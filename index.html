@@ -6,7 +6,18 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello World!</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto expedita veritatis pariatur iure consectetur, repellat non corporis rerum perspiciatis aliquid, quis veniam rem molestias vero cum at, sapiente nemo dolorem!</p>
+    <div id="content">
+
+    </div>
+    <script>
+        fetch("https://ci-swapi.herokuapp.com/api/")
+        .then(response=>response.json())
+        .then(data => {
+            document.getElementById("content").innerText = data.people;
+        })
+        .catch((e)=> {
+            console.error("Error: ", e);
+        })
+    </script>
 </body>
 </html>
